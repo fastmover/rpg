@@ -1,4 +1,4 @@
-A journey of sorts.
+A Story for another time.
 
 ---
 
