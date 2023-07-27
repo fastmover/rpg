@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://c6rcxcgdoxdew"]
+[gd_scene load_steps=23 format=3 uid="uid://c6rcxcgdoxdew"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_qijim"]
 [ext_resource type="Texture2D" uid="uid://cct8ehtn0y0xg" path="res://images/characters/Character_001.png" id="2_c3d2r"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://joystick/virtual_joystick.tscn" id="3_myk67"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp354"]
 atlas = ExtResource("2_c3d2r")
@@ -158,11 +159,18 @@ script = ExtResource("1_qijim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fm44d")
-animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_y1a47")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
+
+[node name="TouchControls" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="TouchControls" instance=ExtResource("3_myk67")]
+action_left = "left"
+action_right = "right"
+action_up = "up"
+action_down = "down"
