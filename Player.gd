@@ -24,6 +24,6 @@ func get_input():
 		_animated_sprite.stop()
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
